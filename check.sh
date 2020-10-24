@@ -7,10 +7,19 @@ YELLOW="\033[1;33m"
 MAGENTA="\033[1;35m"
 RED="\033[0;31m"
 
-# Check if JSHint Available
+# Check if JSHint & Node Available
 JSHint="$(command -v jshint)"
+NODE="$(command -v node)"
+
 if [[ -z "${JSHint}" ]]; then
     echo -e "${YELLOW}JSHint not available, kindly run ${NC}${MAGENTA}'npm install -g jshint'${NC}"
+    echo ""
+    echo -e "${RED}Exiting...${NC}"
+    exit 1
+fi
+
+if [[ -z "${NODE}" ]]; then
+    echo -e "${YELLOW}Node not available, kindly install ${NC}${MAGENTA}'nodejs'${NC} (See: https://nodejs.org/en/)"
     echo ""
     echo -e "${RED}Exiting...${NC}"
     exit 1
