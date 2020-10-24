@@ -20,4 +20,4 @@ jobs:
     - name: Installing JSHint
       run: npm install -g jshint
     - name: Running JSHint
-      run: jshint --verbose .
+      run: ./check.sh
